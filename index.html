@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ExploreWorld Travel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; background: #f4f4f4; }
+
+    nav {
+      background: #333;
+      padding: 10px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
+      height: 60vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    header h1 { font-size: 3em; }
+    header p { font-size: 1.2em; }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .features, .gallery, .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card, .gallery img, .testimonial {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 15px;
+      width: 250px;
+      text-align: center;
+    }
+
+    .gallery img {
+      height: 180px;
+      object-fit: cover;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      max-width: 600px;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #2980b9;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .features, .gallery, .testimonials {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header h1 { font-size: 2em; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="home">
+    <h1>ExploreWorld</h1>
+    <p>Your adventure starts here!</p>
+  </header>
+
+  <section>
+    <h2>🌍 Top Destinations</h2>
+    <div class="features">
+      <div class="card">
+        <h3>Paris</h3>
+        <p>City of lights, love, and croissants.</p>
+      </div>
+      <div class="card">
+        <h3>Bali</h3>
+        <p>Beaches, temples, and sunsets await.</p>
+      </div>
+      <div class="card">
+        <h3>Tokyo</h3>
+        <p>Modern marvels and rich traditions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>🧭 Our Services</h2>
+    <div class="features">
+      <div class="card">
+        <h3>Flight Booking</h3>
+        <p>Book domestic and international flights with ease.</p>
+      </div>
+      <div class="card">
+        <h3>Hotel Reservations</h3>
+        <p>Stay at the best places, from budget to luxury.</p>
+      </div>
+      <div class="card">
+        <h3>Custom Tour Packages</h3>
+        <p>Personalized tours to match your travel style.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🖼 Travel Gallery</h2>
+    <div class="gallery">
+      <img src="C:\Users\Roshini\Downloads\beach.jpeg" alt="Beach">
+      <img src="C:\Users\Roshini\Documents\mountain.jpg" alt="Mountains">
+      <img src="C:\Users\Roshini\Downloads\city.jpeg" alt="City">
+      <img src="C:\Users\Roshini\Downloads\nature.jpeg" alt="Nature">
+    </div>
+  </section>
+
+  <section>
+    <h2>🧾 Book Your Trip</h2>
+    <form onsubmit="bookTrip(event)">
+      <input name="name" type="text" placeholder="Full Name" required>
+      <input name="email" type="email" placeholder="Email Address" required>
+      <select name="destination" required>
+        <option value="">Select Destination</option>
+        <option>Paris</option>
+        <option>Bali</option>
+        <option>Tokyo</option>
+      </select>
+      <input name="date" type="date" required>
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>💬 Feedback from Our Travellers </h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>“ExploreWorld made my dream trip to Bali unforgettable!”</p>
+        <strong>- Ananya</strong>
+      </div>
+      <div class="testimonial">
+        <p>“Everything was perfectly organized. Loved Paris!”</p>
+        <strong>- Ramesh</strong>
+      </div>
+      <div class="testimonial">
+        <p>“I’ll definitely book again. Highly recommend!”</p>
+        <strong>- Priya</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="text-align:center; padding-top: 20px;">
+    <h2>📞 Contact Us</h2>
+    <p>Email: explore@travel.com | Phone: +91 8121902985</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ExploreWorld. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function bookTrip(event) {
+      event.preventDefault();
+      alert("Thank you")}
+</script>
+</body>
+</html>
